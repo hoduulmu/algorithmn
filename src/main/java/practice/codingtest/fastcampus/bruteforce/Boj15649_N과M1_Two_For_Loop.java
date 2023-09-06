@@ -5,11 +5,11 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
-public class Boj15649_N과M1 {
+public class Boj15649_N과M1_Two_For_Loop {
 
     private static final StringBuilder sb = new StringBuilder();
     private int N, M;
-    private int[] selected, used;
+    private int[] selected;
 
     public void input() {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -39,7 +39,6 @@ public class Boj15649_N과M1 {
         N = n;
         M = m;
         selected = new int[M];
-        used = new int[N];
     }
 
     private void recurrenceFunction(int k) {

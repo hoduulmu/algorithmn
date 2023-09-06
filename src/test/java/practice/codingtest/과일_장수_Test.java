@@ -1,6 +1,6 @@
-package org.example;
+package practice.codingtest;
 
-import org.assertj.core.api.Assertions;
+import practice.codingtest.programmers.과일_장수;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;

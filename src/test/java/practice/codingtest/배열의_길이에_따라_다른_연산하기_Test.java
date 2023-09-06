@@ -1,6 +1,6 @@
-package org.example;
+package practice.codingtest;
 
-import org.assertj.core.api.Assertions;
+import practice.codingtest.programmers.배열의_길이에_따라_다른_연산하기;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;

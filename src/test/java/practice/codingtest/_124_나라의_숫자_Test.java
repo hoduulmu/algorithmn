@@ -1,6 +1,8 @@
-package org.example;
+package practice.codingtest;
 
+import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
+import practice.codingtest.programmers._124_나라의_숫자;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -8,7 +10,7 @@ class _124_나라의_숫자_Test {
 
     @Test
     void tc1() {
-        assertThat(new _124_나라의_숫자().solution(1)).isEqualTo("1");
+        Assertions.assertThat(new _124_나라의_숫자().solution(1)).isEqualTo("1");
     }
 
     @Test

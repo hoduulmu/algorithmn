@@ -1,5 +1,7 @@
-package org.example;
+package practice.codingtest;
 
+import org.assertj.core.api.Assertions;
+import practice.codingtest.programmers.추억_점수;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -8,7 +10,7 @@ class 추억_점수_Test {
 
     @Test
     void tc1() {
-        assertThat(new 추억_점수().solutionUseForLoop(
+        Assertions.assertThat(new 추억_점수().solutionUseForLoop(
                 new String[]{"may", "kein", "kain", "radi"},
                 new int[]{5, 10, 1, 3},
                 new String[][]{{"may", "kein", "kain", "radi"},{"may", "kein", "brin", "deny"}, {"kon", "kain", "may", "coni"}}

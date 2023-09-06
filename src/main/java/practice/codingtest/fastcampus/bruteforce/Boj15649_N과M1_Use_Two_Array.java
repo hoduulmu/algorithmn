@@ -5,21 +5,11 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
-public class Boj15649_N과M1 {
+public class Boj15649_N과M1_Use_Two_Array {
 
     private static final StringBuilder sb = new StringBuilder();
     private int N, M;
     private int[] selected, used;
-
-    public void input() {
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        try {
-            StringTokenizer st = new StringTokenizer(br.readLine());
-            setInput(Integer.parseInt(st.nextToken()), Integer.parseInt(st.nextToken()));
-        } catch (IOException e) {
-            throw new IllegalArgumentException();
-        }
-    }
 
     public void solve() {
         input();
@@ -33,6 +23,16 @@ public class Boj15649_N과M1 {
         String answer = sb.toString();
         sb.setLength(0);
         return answer;
+    }
+
+    private void input() {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        try {
+            StringTokenizer st = new StringTokenizer(br.readLine());
+            setInput(Integer.parseInt(st.nextToken()), Integer.parseInt(st.nextToken()));
+        } catch (IOException e) {
+            throw new IllegalArgumentException();
+        }
     }
 
     private void setInput(int n, int m) {
@@ -52,20 +52,13 @@ public class Boj15649_N과M1 {
         }
 
         for (int i = 0; i < N; i++) {
-            if (!isAlreadyContain(i + 1)) {
+            if (used[i] != 1) {
                 selected[k] = i + 1;
+                used[i] = 1;
                 recurrenceFunction(k + 1);
                 selected[k] = 0;
+                used[i] = 0;
             }
         }
-    }
-
-    private boolean isAlreadyContain(int num) {
-        for (int i : selected) {
-            if (i == num) {
-                return true;
-            }
-        }
-        return false;
     }
 }

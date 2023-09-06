@@ -1,4 +1,4 @@
-package org.example;
+package practice.codingtest.programmers;
 
 public class _124_나라의_숫자 {
 
@@ -11,6 +11,8 @@ public class _124_나라의_숫자 {
             n /= 3;
             if (mod == 0) n -= 1;
         }
+        System.out.println("abcd");
+
 
         return answer.reverse().toString();
     }

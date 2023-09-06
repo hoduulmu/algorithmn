@@ -5,21 +5,21 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
-public class Boj15650_N과M2 {
+public class Boj15650_N과M2_Better {
 
     private static final StringBuilder sb = new StringBuilder();
     private static int N, M;
-    private static int[] selected, used;
+    private static int[] selected;
 
     public static void solve() {
         input();
-        recurrenceFunction(0, 0);
+        recurrenceFunction(0);
         System.out.println(sb);
     }
 
     public static String solve(int n, int m) {
         setInput(n, m);
-        recurrenceFunction(0, 0);
+        recurrenceFunction(0);
         String answer = sb.toString();
         sb.setLength(0);
         return answer;
@@ -39,10 +39,9 @@ public class Boj15650_N과M2 {
         N = n;
         M = m;
         selected = new int[M];
-        used = new int[N];
     }
 
-    private static void recurrenceFunction(int k, int p) {
+    private static void recurrenceFunction(int k) {
         if (k == M) {
             for (int num : selected) {
                 sb.append(num).append(' ');
@@ -51,14 +50,10 @@ public class Boj15650_N과M2 {
             return;
         }
 
-        for (int i = p; i < N; i++) {
-            if (used[i] != 1) {
-                selected[k] = i + 1;
-                used[i] = 1;
-                recurrenceFunction(k + 1, i);
-                selected[k] = 0;
-                used[i] = 0;
-            }
+        for (int i = k == 0 ? 0 : selected[k - 1]; i < N; i++) {
+            selected[k] = i + 1;
+            recurrenceFunction(k + 1);
+            selected[k] = 0;
         }
     }
 }
